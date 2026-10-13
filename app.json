@@ -1,24 +1,39 @@
 {
   "expo": {
-    "name": "habitzen",
+    "name": "HabitZen",
     "slug": "habitzen",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
+    "primaryColor": "#14968C",
     "ios": {
       "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#FFFFFF",
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
-    }
+      "favicon": "./assets/favicon.png",
+      "name": "HabitZen – Gestor de hábitos y bienestar",
+      "shortName": "HabitZen",
+      "themeColor": "#14968C",
+      "backgroundColor": "#FFFFFF"
+    },
+    "plugins": [
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 200,
+          "backgroundColor": "#FFFFFF"
+        }
+      ]
+    ]
   }
 }
