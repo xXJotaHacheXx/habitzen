@@ -1,0 +1,5 @@
+# Normaliza los saltos de línea (evita cambios "fantasma" entre Windows y Mac/Linux)
+* text=auto
+*.png binary
+*.ico binary
+*.ttf binary
