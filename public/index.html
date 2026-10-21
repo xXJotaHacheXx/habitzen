@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>%WEB_TITLE%</title>
+    <meta name="description" content="HabitZen: crea, da seguimiento y mantén tus hábitos saludables, incluso sin conexión." />
+
+    <!-- PWA: manifest, color de la barra y ícono para iOS -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#14968C" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="HabitZen" />
+
+    <!-- The `react-native-web` recommended style reset: https://necolas.github.io/react-native-web/docs/setup/#root-element -->
+    <style id="expo-reset">
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        overflow: hidden;
+      }
+      #root {
+        display: flex;
+        height: 100%;
+        flex: 1;
+      }
+    </style>
+
+    <!-- PWA: registro del service worker (sw.js lo genera Workbox al hacer "npm run build:web") -->
+    <script>
+      // No se registra en el servidor de desarrollo (puerto 8081) para no cachear código viejo
+      if ('serviceWorker' in navigator && location.port !== '8081') {
+        window.addEventListener('load', function () {
+          navigator.serviceWorker.register('/sw.js').catch(function (e) {
+            console.info('Service worker no registrado:', e.message);
+          });
+        });
+      }
+    </script>
+  </head>
+
+  <body>
+    <noscript>Necesitas habilitar JavaScript para usar HabitZen.</noscript>
+    <div id="root"></div>
+  </body>
+</html>
